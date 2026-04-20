@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFM Ratanda Church</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .zoom-on-hover {
+            transition: transform 0.3s ease;
+        }
+        .zoom-on-hover:hover {
+            transform: scale(1.05);
+        }
+        header {
+            background-color: white;
+            color: #333;
+        }
+        .carousel-arrow {
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .carousel-arrow:hover {
+            background-color: black;
+            color: white;
+        }
+        
+        /* Live Button Hover Effect */
+        #liveBtn {
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+        }
+        #liveBtn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            filter: brightness(1.1);
+        }
+
+        /* Lightbox Full Screen Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .lightbox-close:hover {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <img src="images.png" alt="AFM Ratanda Logo" style="height: 50px; vertical-align: middle; margin-right: 10px;">
+                AFM Ratanda
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li> 
+                <li><a href="#youth">Youth</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#give">Give</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Welcome To Rathanda Church</h1>
+            <p>Join us as we grow in faith, fellowship, and service to our community.</p>
+            <a href="https://www.facebook.com/p/AFM-Ratanda-61557602922486/" target="_blank" class="btn-main" id="liveBtn">Join Us LIVE</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" style="padding: 50px 0; background: rgba(0, 0, 0, 0.7); margin-bottom: 20px;">
+        <div class="container">
+            <h2 style="text-align: center;">Gallery</h2>
+            <p style="text-align: center;">Life at AFM Ratanda.</p>
+
+            <h3 style="text-align: center; margin-top: 40px; font-weight: normal; font-style: italic;">Coming Soon...</h3>
+            
+            <!-- Temporarily hiding the gallery images until we have content
+            <div style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+                <a href="#" id="prevBtn" class="carousel-arrow">&#10094;</a>
+                <div id="imageGallery" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin: 0 15px; flex: 1; max-width: 900px;">
+                    <img class="zoom-on-hover gallery-img" src="" alt="https://placehold.co/400x300" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid black;">
+                    <img class="zoom-on-hover gallery-img" src="https://placehold.co/400x300" alt="video content/youth/WhatsApp Image 2026-04-10 at 9.37.53 PM.jpeg" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid black;">
+                    <img class="zoom-on-hover gallery-img" src="https://placehold.co/400x300" alt="Gal" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid black;">
+                    <img class="zoom-on-hover gallery-img" src="https://placehold.co/400x300" alt="Gallery Image 4" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid black;">
+                    <img class="zoom-on-hover gallery-img" src="https://placehold.co/400x300" alt="Gallery Image 5" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid black;">
+                    <img class="zoom-on-hover gallery-img" src="https://placehold.co/400x300" alt="Gallery Image 6" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid black;">
+                    <img class="zoom-on-hover gallery-img" src="https://placehold.co/400x300" alt="Gallery Image 7" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid black;">
+                    <img class="zoom-on-hover gallery-img" src="https://placehold.co/400x300" alt="Gallery Image 8" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid black;">
+                </div>
+                <a href="#" id="nextBtn" class="carousel-arrow">&#10095;</a>
+            </div>
+            -->
+        </div>
+    </section>
+
+    <!-- Youth Section -->
+    <section id="youth" style="padding: 50px 0; background: rgba(0, 0, 0, 0.7);">
+        <div class="container">
+            <h2 style="text-align: center;">Youth Ministry</h2>
+            <p style="text-align: center;">See what our youth have been up to!</p>
+            <div style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+                <a href="#" id="prevYouthBtn" class="carousel-arrow">&#10094;</a>
+                <div id="youthGallery" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin: 0 15px; flex: 1; max-width: 900px;">
+                    <video class="zoom-on-hover hover-play youth-media" muted loop style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid black; background: #eee;">
+                        <source src="video content/WhatsApp Video 2026-04-10 at 9.38.40 PM.mp4" type="video/mp4">
+                    </video>
+                    <img class="zoom-on-hover youth-media" src="video content/youth/WhatsApp Image 2026-04-10 at 9.37.53 PM.jpeg" alt="Youth Activity" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid black;">
+                    <video class="zoom-on-hover hover-play youth-media" muted loop style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid black; background: #eee;">
+                        <source src="video content/WhatsApp Video 2026-04-10 at 9.39.09 PM.mp4" type="video/mp4">
+                    </video>
+                    <img class="zoom-on-hover youth-media" src="video content/youth/WhatsApp Image 2026-04-10 at 9.37.55 PM (1).jpeg" alt="Youth Activity" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid black;">
+                    <video class="zoom-on-hover hover-play youth-media" muted loop style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid black; background: #eee;">
+                        <source src="video content/WhatsApp Video 2026-04-10 at 9.39.34 PM.mp4" type="video/mp4">
+                    </video>
+                    <img class="zoom-on-hover youth-media" src="video content/youth/WhatsApp Image 2026-04-10 at 9.38.01 PM.jpeg" alt="Youth Activity" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid black;">
+                    <video class="zoom-on-hover hover-play youth-media" muted loop style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid black; background: #eee;">
+                        <source src="video content/WhatsApp Video 2026-04-10 at 9.39.09 PM.mp4" type="video/mp4">
+                    </video>
+                    <img class="zoom-on-hover youth-media" src="video content/youth/WhatsApp Image 2026-04-10 at 9.37.58 PM.jpeg" alt="Youth Activity" style="width: 200px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid black;">
+                </div>
+                <a href="#" id="nextYouthBtn" class="carousel-arrow">&#10095;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Description Section -->
+    <section id="about" style="padding: 50px 0;">
+        <div class="container">
+            <h2 style="text-align: center;">About Us</h2>
+            <div style="max-width: 800px; margin: 30px auto; line-height: 1.6; padding: 0 20px;">
+                
+                <h3>Our Foundation</h3>
+                <p>We believe and humbly profess that our assembly has its origin, continued existence, and destiny from God. It is a revelation of the church of Jesus Christ, governed by Him as Head according to the enunciations of the Holy Scriptures, the work of the Holy Spirit, and the ministrations instituted by Him.</p>
+
+                <h3 style="margin-top: 30px;">Confession of Faith</h3>
+                <p>Our assembly prescribes to the confession of faith as declared by the Apostolic Faith Mission of South Africa in terms of the Preamble to the constitution of the Church.</p>
+
+                <h3 style="margin-top: 30px;">Our Vision</h3>
+                <p>Our vision is to reach out and impact our community through soul winning, and to disciple believers to love and care for one another as we worship God together.</p>
+
+                <h3 style="margin-top: 30px;">Our Mission</h3>
+                <p>Our mission is to proclaim the Word and the Kingdom of God by teaching and preaching the gospel of Jesus Christ to every creature through the power of the Holy Spirit. We strive to teach, develop, equip, and release believers into ministry, while ministering to the needs of the total person. Ultimately, we seek to extend the influence of the church to our surrounding communities through soul winning, all to glorify God.</p>
+
+                <h3 style="margin-top: 30px;">Core Values</h3>
+                <p>In everything we do, we are guided by our core principles: <strong>respect, leadership, transparency, integrity, and accountability.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" style="padding: 50px 0; background: rgba(0, 0, 0, 0.7);">
+        <div class="container">
+            <h2 style="text-align: center;">Where We Are Located</h2>
+            <p style="text-align: center; margin-bottom: 40px;">We would love to welcome you in person! Find our service times and location details below.</p>
+            
+            <div id="locationContainer" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; align-items: stretch;">
+                
+                <!-- Details Box -->
+                <div style="flex: 1; min-width: 250px; max-width: 400px; background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); box-sizing: border-box;">
+                    <h3 style="color: rgb(28, 76, 220); margin-top: 0;">Service Times</h3>
+                    <p style="margin: 5px 0;"><strong>Sunday Worship:</strong> 10:00 AM</p>
+                    <p style="margin: 5px 0 20px 0;"><strong>Youth (Fridays):</strong> 17:00 PM</p>
+                    
+                    <h3 style="color: rgb(28, 76, 220);">Address & Contact</h3>
+                    <p style="margin: 5px 0;">📍 Ratanda, Heidelberg</p>
+                    <p style="margin: 5px 0;">📞 +27 90 443 0303</p>
+                    <p style="margin: 5px 0;">✉️ info@afmratanda.org</p>
+                    
+                    <p style="margin-top: 20px; font-style: italic; color: #ccc; font-size: 0.9em;">Ample safe parking is available on-site. Our welcome team will be ready to greet you at the door!</p>
+                </div>
+
+                <!-- Interactive Card -->
+                <div style="flex: 1; min-width: 250px; max-width: 400px; display: flex; box-sizing: border-box;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3568.985494146361!2d28.326908945362433!3d-26.5527339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e94dd3c1ee5f533%3A0x1c49aa20f89ca9a!2sFaith%20Mission!5e0!3m2!1sen!2sza!4v1776439450704!5m2!1sen!2sza" width="100%" height="350" style="border:0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Give Section -->
+    <section id="give" style="padding: 50px 0;">
+        <div class="container">
+            <h2 style="text-align: center;">Give</h2>
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p>Support the vision and mission of our community. Your tithes and offerings help us serve.</p>
+                <div style="background: white; color: #333; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-top: 20px;">
+                    <h3>Banking Details</h3>
+                    <p><strong>Bank:</strong> Standard Bank (Example)</p>
+                    <p><strong>Account Name:</strong> AFM Ratanda</p>
+                    <p><strong>Account Number:</strong> 123 456 789</p>
+                    <p><strong>Branch Code:</strong> 051001</p>
+                    <p><strong>Reference:</strong> Tithe / Offering</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div>
+                <h4>Contact Us</h4>
+                <p>Phone: +27 90 443 0303</p>
+                <p>Address: Ratanda, Heidelberg</p>
+                <p>Email: info@afmratanda.org</p>
+            </div>
+            
+            <div>
+                <h4>Service Times</h4>
+                <p>Sunday Worship: 10:00 AM</p>
+                <p>Youth: Fridays @ 17:00</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span id="lightboxClose" class="lightbox-close">&times;</span>
+        <img id="lightboxImg" src="" alt="Full Screen Image">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
