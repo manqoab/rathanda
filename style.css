@@ -1,0 +1,187 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --light-bg: #f4f7f6;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: white;
+    background-color: #1c1b1b;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('WhatsApp Image 2026-01-21 at 7.37.24 PM.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Navigation */
+header {
+    background: rgb(28, 76, 220);
+    color: black;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(20, 88, 225, 0.1);
+    position: relative;
+    z-index: 100;
+    border-radius: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: inherit;
+    margin-left: 20px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.nav-links li a:hover {
+    color: white;
+    background-color: black;
+}
+
+/* Hero Section */
+.hero {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-main {
+    background: var(--accent-color);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Cards Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 50px 0;
+}
+
+.card {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Events */
+.event-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.date-badge {
+    text-align: center;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background: white;
+    color: black;
+    padding: 10px 0;
+    border-radius: 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+/* Mobile Responsiveness (Upright Phones) */
+@media (max-width: 768px) {
+    header {
+        border-radius: 0; /* Looks better edge-to-edge on mobile */
+    }
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        margin-top: 15px;
+        gap: 10px;
+    }
+    .nav-links li a {
+        margin-left: 0;
+    }
+    .hero h1 {
+        font-size: 2.2rem; /* Shrinks the main title slightly */
+        line-height: 1.2;
+    }
+        
+        /* Make the carousels natively scroll sideways instead of stacking up and down */
+        .carousel-arrow {
+            display: none !important; /* Hide arrows, mobile users prefer to swipe */
+        }
+    .gallery-img, .youth-media {
+            display: block !important; /* Overrides JS to reveal all items for swiping */
+            width: 250px !important;
+            height: 180px !important;
+            flex-shrink: 0; /* Prevents squishing */
+    }
+    #youthGallery, #imageGallery {
+            flex-wrap: nowrap !important; /* Forces a single sideways row */
+            overflow-x: auto !important; /* Enables sideways swiping */
+            justify-content: flex-start !important;
+            gap: 15px !important;
+            padding-bottom: 15px; /* Adds space for the scrollbar */
+            -webkit-overflow-scrolling: touch; /* Smooth momentum scrolling on iOS */
+            margin: 0 !important;
+        }
+
+    /* Make the Location details and map stack vertically */
+        #locationContainer {
+        flex-direction: column !important;
+        align-items: center !important;
+        }
+        #locationContainer > div {
+        width: 100% !important;
+        max-width: 500px !important;
+    }
+}
