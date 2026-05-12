@@ -1,0 +1,315 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --bg-color: #f4f7f6;
+    --text-color: #333333;
+    --nav-bg: #ffffff;
+    --nav-text: #333333;
+    --card-bg: #ffffff;
+    --section-alt-bg: #e2e8e4;
+}
+
+[data-theme="dark"] {
+    --primary-color: #34495e;
+    --accent-color: #e74c3c;
+    --bg-color: #121212;
+    --text-color: #f4f7f6;
+    --nav-bg: #1e1e1e;
+    --nav-text: #f4f7f6;
+    --card-bg: #1e1e1e;
+    --section-alt-bg: #1a1a1a;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Navigation */
+header {
+    background: var(--nav-bg);
+    color: var(--nav-text);
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 0 0 20px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: inherit;
+    margin-left: 20px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.nav-links li a:hover {
+    color: var(--bg-color);
+    background-color: var(--nav-text);
+}
+
+/* Theme Toggle Switch */
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    margin-left: 15px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e2e8e4;
+    transition: .4s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+input:checked + .slider {
+    background-color: #1a1a1a;
+}
+
+input:checked + .slider::before {
+    transform: translateX(30px);
+}
+
+.slider.round {
+    border-radius: 30px;
+}
+
+.slider.round::before {
+    border-radius: 50%;
+}
+
+.slider .icon {
+    font-size: 14px;
+    z-index: 1;
+    user-select: none;
+}
+
+.slider .sun {
+    color: #333333;
+}
+
+.slider .moon {
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    background: url('WhatsApp Image 2026-01-21 at 7.37.24 PM.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.btn-main {
+    background: var(--accent-color);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Cards Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 50px 0;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Alternating Section Backgrounds */
+.section-alt {
+    background-color: var(--section-alt-bg);
+}
+
+/* Events */
+.event-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-bg);
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.date-badge {
+    text-align: center;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background: var(--nav-bg);
+    color: var(--nav-text);
+    padding: 40px 0;
+    border-radius: 20px 20px 0 0;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.calendar-day {
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid var(--section-alt-bg);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calendar-day:hover {
+    transform: translateY(-5px);
+    background-color: var(--section-alt-bg);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.calendar-day h4 {
+    margin: 0 0 10px 0;
+    color: var(--text-color);
+    font-size: 1.1em;
+    border-bottom: 2px solid var(--section-alt-bg);
+    padding-bottom: 8px;
+}
+
+.calendar-day p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* Mobile Responsiveness (Upright Phones) */
+@media (max-width: 768px) {
+    header {
+        border-radius: 0; /* Looks better edge-to-edge on mobile */
+    }
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        margin-top: 15px;
+        gap: 10px;
+    }
+    .nav-links li a {
+        margin-left: 0;
+    }
+    .hero h1 {
+        font-size: 2.2rem; /* Shrinks the main title slightly */
+        line-height: 1.2;
+    }
+        
+    /* Make the carousels natively scroll sideways instead of stacking up and down */
+    .carousel-arrow {
+        display: none !important; /* Hide arrows, mobile users prefer to swipe */
+    }
+    .gallery-img, .youth-media {
+        display: block !important; /* Overrides JS to reveal all items for swiping */
+        width: 250px !important;
+        height: 180px !important;
+        flex-shrink: 0; /* Prevents squishing */
+    }
+    #youthGallery, #imageGallery {
+        flex-wrap: nowrap !important; /* Forces a single sideways row */
+        overflow-x: auto !important; /* Enables sideways swiping */
+        justify-content: flex-start !important;
+        gap: 15px !important;
+        padding-bottom: 15px; /* Adds space for the scrollbar */
+        -webkit-overflow-scrolling: touch; /* Smooth momentum scrolling on iOS */
+        margin: 0 !important;
+    }
+
+    /* Make the Location details and map stack vertically */
+    #locationContainer {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    #locationContainer > div {
+        width: 100% !important;
+        max-width: 500px !important;
+    }
+}
